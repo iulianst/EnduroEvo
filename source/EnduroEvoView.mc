@@ -209,14 +209,14 @@ class EnduroEvoView extends WatchUi.WatchFace {
         if (!System.getDeviceSettings().is24Hour) {
             if (hours > 12) {
                 hours = hours - 12;
+                timeFormat = "$1$:$2$";
             }
         } else {
-            if (mUseMil) {
+            if (mUseMil) {                
                 timeFormat = "$1$$2$";
-                hours = hours.format("%02d");
             }
-            else{hours = hours.format("%02d");}
-        }     
+        }   
+        hours = hours.format("%02d");
         var timeString = Lang.format(timeFormat, [hours, clockTime.min.format("%02d")]);
 
         dc.setColor(mFgColor,Graphics.COLOR_TRANSPARENT	);

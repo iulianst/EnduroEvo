@@ -69,7 +69,9 @@ class EnduroEvoDataField {
         var HR =  Activity.getActivityInfo().currentHeartRate;
         if(HR != null) {return HR;}
         else {return 00;}
-        //return new EnduroEvoSensors().getHR();
+        var sHR = new EnduroEvoSensors().getHR();
+        if(sHR != null) {return sHR;}
+        return 0;
     }
     function getTemperature() {        
         var temp = new EnduroEvoSensors().getTemperature();
@@ -79,8 +81,6 @@ class EnduroEvoDataField {
     function getBodyTemp() as Lang.Float {
         var HR = getHR(); if (HR== null) {HR=60;}
         var temp =  getTemperature(); if (temp== null) {return 0.0;}
-        
-
         return 0.0100 *HR +0.0837 * temp + 33.1735;
     }
 
