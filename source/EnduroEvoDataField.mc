@@ -68,7 +68,8 @@ class EnduroEvoDataField {
     function getHR() as Lang.Number{
         var HR =  Activity.getActivityInfo().currentHeartRate;
         if(HR != null) {return HR;}
-        return new EnduroEvoSensors().getHR();
+        else {return 00;}
+        //return new EnduroEvoSensors().getHR();
     }
     function getTemperature() {        
         var temp = new EnduroEvoSensors().getTemperature();

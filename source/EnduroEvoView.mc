@@ -264,11 +264,15 @@ class EnduroEvoView extends WatchUi.WatchFace {
         drawMark(dc,330,5, Graphics.COLOR_WHITE);
         drawMark(dc,300,5, Graphics.COLOR_WHITE);
         var angle_ring1 = (System.getSystemStats().battery *360/100);
-        var angle_ring2 =  (actpercent*360);   
+        var angle_ring2 = (actpercent*360);   
+        //var angle_ring3 = 60 * 360 / 120;
+        var angle_ring3 = mDataField.getValue(14) * 360 / 120;
 
         drawHashIndicator(dc,dinfo.steps *360/dinfo.stepGoal,scr_width/2-10,10,mMarker1Color,0);
         drawHashIndicator(dc,angle_ring1,scr_width/2-1,10,mMarker2Color,3);
         drawHashIndicator(dc,angle_ring2,scr_width/2-1,10,mMarker3Color,2);
+        drawHashIndicator(dc,angle_ring3,scr_width/2-1,10,Graphics.COLOR_WHITE,1);
+        
         dc.setColor(mFgColor,Graphics.COLOR_TRANSPARENT	);
 
         dc.drawText(mLatOffset, getApp().mYDataBL , fontData, hr.toString(), Graphics.TEXT_JUSTIFY_RIGHT);
