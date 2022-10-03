@@ -1,0 +1,10 @@
+*.fnt
+*.fot
+*.ttf
+*.png
+*.url
+*.xml
+.DS_Store
+*.txt
+*.prg
+*.bmfc
