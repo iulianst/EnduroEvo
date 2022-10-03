@@ -1,0 +1,278 @@
+<settings>
+
+    <setting propertyKey="@Properties.GraphData" title="@Strings.GraphDataTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.GraphBodyTemp</listEntry>
+            <listEntry value="1">@Strings.GraphHeartRate</listEntry>
+            <listEntry value="2">@Strings.GraphTemperature</listEntry>
+            <listEntry value="3">@Strings.GraphPressure</listEntry>
+            <listEntry value="4">@Strings.GraphElevation</listEntry>
+           <!-- <listEntry value="4">@Strings.GraphOxygen</listEntry>-->
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
+            <listEntry value="0xAA0000">@Strings.ColorDarkRed</listEntry>
+            <listEntry value="0xFF5500">@Strings.ColorOrange</listEntry>
+            <listEntry value="0xFFAA00">@Strings.ColorYellow</listEntry>
+            <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
+            <listEntry value="0x00AA00">@Strings.ColorDarkGreen</listEntry>
+            <listEntry value="0x00AAFF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x0000FF">@Strings.ColorDarkBlue</listEntry>
+            <listEntry value="0xAA00FF">@Strings.ColorPurple</listEntry>
+            <listEntry value="0xFF00FF">@Strings.ColorPink</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.ForegroundColor" title="@Strings.ForegroundColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
+            <listEntry value="0xAA0000">@Strings.ColorDarkRed</listEntry>
+            <listEntry value="0xFF5500">@Strings.ColorOrange</listEntry>
+            <listEntry value="0xFFAA00">@Strings.ColorYellow</listEntry>
+            <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
+            <listEntry value="0x00AA00">@Strings.ColorDarkGreen</listEntry>
+            <listEntry value="0x00AAFF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x0000FF">@Strings.ColorDarkBlue</listEntry>
+            <listEntry value="0xAA00FF">@Strings.ColorPurple</listEntry>
+            <listEntry value="0xFF00FF">@Strings.ColorPink</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.Marker1Color" title="@Strings.Marker1Color">
+        <settingConfig type="list">
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
+            <listEntry value="0xAA0000">@Strings.ColorDarkRed</listEntry>
+            <listEntry value="0xFF5500">@Strings.ColorOrange</listEntry>
+            <listEntry value="0xFFAA00">@Strings.ColorYellow</listEntry>
+            <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
+            <listEntry value="0x00AA00">@Strings.ColorDarkGreen</listEntry>
+            <listEntry value="0x00AAFF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x0000FF">@Strings.ColorDarkBlue</listEntry>
+            <listEntry value="0xAA00FF">@Strings.ColorPurple</listEntry>
+            <listEntry value="0xFF00FF">@Strings.ColorPink</listEntry>
+        </settingConfig>
+    </setting>
+     <setting propertyKey="@Properties.Marker2Color" title="@Strings.Marker2Color">
+        <settingConfig type="list">
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
+            <listEntry value="0xAA0000">@Strings.ColorDarkRed</listEntry>
+            <listEntry value="0xFF5500">@Strings.ColorOrange</listEntry>
+            <listEntry value="0xFFAA00">@Strings.ColorYellow</listEntry>
+            <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
+            <listEntry value="0x00AA00">@Strings.ColorDarkGreen</listEntry>
+            <listEntry value="0x00AAFF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x0000FF">@Strings.ColorDarkBlue</listEntry>
+            <listEntry value="0xAA00FF">@Strings.ColorPurple</listEntry>
+            <listEntry value="0xFF00FF">@Strings.ColorPink</listEntry>
+        </settingConfig>
+    </setting> 
+    <setting propertyKey="@Properties.Marker3Color" title="@Strings.Marker3Color">
+        <settingConfig type="list">
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
+            <listEntry value="0xAA0000">@Strings.ColorDarkRed</listEntry>
+            <listEntry value="0xFF5500">@Strings.ColorOrange</listEntry>
+            <listEntry value="0xFFAA00">@Strings.ColorYellow</listEntry>
+            <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
+            <listEntry value="0x00AA00">@Strings.ColorDarkGreen</listEntry>
+            <listEntry value="0x00AAFF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x0000FF">@Strings.ColorDarkBlue</listEntry>
+            <listEntry value="0xAA00FF">@Strings.ColorPurple</listEntry>
+            <listEntry value="0xFF00FF">@Strings.ColorPink</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.TimeFontSize" title="@Strings.TimeFontSize">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.TimeFontSmall</listEntry>
+            <listEntry value="1">@Strings.TimeFontMedium</listEntry>
+            <listEntry value="2">@Strings.TimeFontBig</listEntry>
+    </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.AlwaysOnSec" title="@Strings.AlwaysOnSec">
+        <settingConfig type="boolean" />
+    </setting>
+
+    <setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
+        <settingConfig type="boolean" />
+    </setting>
+
+    <setting propertyKey="@Properties.Field1Data" title="@Strings.Field1Data">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.None</listEntry>
+            <listEntry value="1">@Strings.ActiveMinutesDay</listEntry>
+            <listEntry value="2">@Strings.ActiveMinutesWeek</listEntry>
+            <listEntry value="3">@Strings.ActiveMinutesGoal</listEntry>
+            <listEntry value="4">@Strings.Calories</listEntry>
+            <listEntry value="5">@Strings.Distance</listEntry>
+            <listEntry value="6">@Strings.FloorsClimbed</listEntry>
+            <listEntry value="7">@Strings.FloorGoal</listEntry>
+            <listEntry value="8">@Strings.FloorsDescended</listEntry>
+            <listEntry value="9">@Strings.DistanceClimbed</listEntry>
+            <listEntry value="10">@Strings.DistanceDescended</listEntry>
+            <listEntry value="11">@Strings.Steps</listEntry>
+            <listEntry value="12">@Strings.StepGoal</listEntry>
+            <listEntry value="13">@Strings.Battery</listEntry>
+            <listEntry value="14">@Strings.HeartRate</listEntry>
+            <listEntry value="15">@Strings.Temperature</listEntry>
+            <listEntry value="16">@Strings.BodyTemperature</listEntry>
+            <listEntry value="17">@Strings.WeatherTemp</listEntry>           
+        </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Field2Data" title="@Strings.Field2Data">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.None</listEntry>
+            <listEntry value="1">@Strings.ActiveMinutesDay</listEntry>
+            <listEntry value="2">@Strings.ActiveMinutesWeek</listEntry>
+            <listEntry value="3">@Strings.ActiveMinutesGoal</listEntry>
+            <listEntry value="4">@Strings.Calories</listEntry>
+            <listEntry value="5">@Strings.Distance</listEntry>
+            <listEntry value="6">@Strings.FloorsClimbed</listEntry>
+            <listEntry value="7">@Strings.FloorGoal</listEntry>
+            <listEntry value="8">@Strings.FloorsDescended</listEntry>
+            <listEntry value="9">@Strings.DistanceClimbed</listEntry>
+            <listEntry value="10">@Strings.DistanceDescended</listEntry>
+            <listEntry value="11">@Strings.Steps</listEntry>
+            <listEntry value="12">@Strings.StepGoal</listEntry>
+            <listEntry value="13">@Strings.Battery</listEntry>
+            <listEntry value="14">@Strings.HeartRate</listEntry>
+            <listEntry value="15">@Strings.Temperature</listEntry>
+            <listEntry value="16">@Strings.BodyTemperature</listEntry>
+            <listEntry value="17">@Strings.WeatherTemp</listEntry>          
+        </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Field3Data" title="@Strings.Field3Data">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.None</listEntry>
+            <listEntry value="1">@Strings.ActiveMinutesDay</listEntry>
+            <listEntry value="2">@Strings.ActiveMinutesWeek</listEntry>
+            <listEntry value="3">@Strings.ActiveMinutesGoal</listEntry>
+            <listEntry value="4">@Strings.Calories</listEntry>
+            <listEntry value="5">@Strings.Distance</listEntry>
+            <listEntry value="6">@Strings.FloorsClimbed</listEntry>
+            <listEntry value="7">@Strings.FloorGoal</listEntry>
+            <listEntry value="8">@Strings.FloorsDescended</listEntry>
+            <listEntry value="9">@Strings.DistanceClimbed</listEntry>
+            <listEntry value="10">@Strings.DistanceDescended</listEntry>
+            <listEntry value="11">@Strings.Steps</listEntry>
+            <listEntry value="12">@Strings.StepGoal</listEntry>
+            <listEntry value="13">@Strings.Battery</listEntry>
+            <listEntry value="14">@Strings.HeartRate</listEntry>
+            <listEntry value="15">@Strings.Temperature</listEntry>
+            <listEntry value="16">@Strings.BodyTemperature</listEntry>
+            <listEntry value="17">@Strings.WeatherTemp</listEntry>           
+        </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Field4Data" title="@Strings.Field4Data">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.None</listEntry>
+            <listEntry value="1">@Strings.ActiveMinutesDay</listEntry>
+            <listEntry value="2">@Strings.ActiveMinutesWeek</listEntry>
+            <listEntry value="3">@Strings.ActiveMinutesGoal</listEntry>
+            <listEntry value="4">@Strings.Calories</listEntry>
+            <listEntry value="5">@Strings.Distance</listEntry>
+            <listEntry value="6">@Strings.FloorsClimbed</listEntry>
+            <listEntry value="7">@Strings.FloorGoal</listEntry>
+            <listEntry value="8">@Strings.FloorsDescended</listEntry>
+            <listEntry value="9">@Strings.DistanceClimbed</listEntry>
+            <listEntry value="10">@Strings.DistanceDescended</listEntry>
+            <listEntry value="11">@Strings.Steps</listEntry>
+            <listEntry value="12">@Strings.StepGoal</listEntry>
+            <listEntry value="13">@Strings.Battery</listEntry>
+            <listEntry value="14">@Strings.HeartRate</listEntry>
+            <listEntry value="15">@Strings.Temperature</listEntry>
+            <listEntry value="16">@Strings.BodyTemperature</listEntry>
+            <listEntry value="17">@Strings.WeatherTemp</listEntry>           
+        </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Field5Data" title="@Strings.Field5Data">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.None</listEntry>
+            <listEntry value="1">@Strings.ActiveMinutesDay</listEntry>
+            <listEntry value="2">@Strings.ActiveMinutesWeek</listEntry>
+            <listEntry value="3">@Strings.ActiveMinutesGoal</listEntry>
+            <listEntry value="4">@Strings.Calories</listEntry>
+            <listEntry value="5">@Strings.Distance</listEntry>
+            <listEntry value="6">@Strings.FloorsClimbed</listEntry>
+            <listEntry value="7">@Strings.FloorGoal</listEntry>
+            <listEntry value="8">@Strings.FloorsDescended</listEntry>
+            <listEntry value="9">@Strings.DistanceClimbed</listEntry>
+            <listEntry value="10">@Strings.DistanceDescended</listEntry>
+            <listEntry value="11">@Strings.Steps</listEntry>
+            <listEntry value="12">@Strings.StepGoal</listEntry>
+            <listEntry value="13">@Strings.Battery</listEntry>
+            <listEntry value="14">@Strings.HeartRate</listEntry>
+            <listEntry value="15">@Strings.Temperature</listEntry>
+            <listEntry value="16">@Strings.BodyTemperature</listEntry>
+            <listEntry value="17">@Strings.WeatherTemp</listEntry>           
+        </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.Field6Data" title="@Strings.Field6Data">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.None</listEntry>
+            <listEntry value="1">@Strings.ActiveMinutesDay</listEntry>
+            <listEntry value="2">@Strings.ActiveMinutesWeek</listEntry>
+            <listEntry value="3">@Strings.ActiveMinutesGoal</listEntry>
+            <listEntry value="4">@Strings.Calories</listEntry>
+            <listEntry value="5">@Strings.Distance</listEntry>
+            <listEntry value="6">@Strings.FloorsClimbed</listEntry>
+            <listEntry value="7">@Strings.FloorGoal</listEntry>
+            <listEntry value="8">@Strings.FloorsDescended</listEntry>
+            <listEntry value="9">@Strings.DistanceClimbed</listEntry>
+            <listEntry value="10">@Strings.DistanceDescended</listEntry>
+            <listEntry value="11">@Strings.Steps</listEntry>
+            <listEntry value="12">@Strings.StepGoal</listEntry>
+            <listEntry value="13">@Strings.Battery</listEntry>
+            <listEntry value="14">@Strings.HeartRate</listEntry>
+            <listEntry value="15">@Strings.Temperature</listEntry>
+            <listEntry value="16">@Strings.BodyTemperature</listEntry>
+            <listEntry value="17">@Strings.WeatherTemp</listEntry>          
+        </settingConfig>
+    </setting>
+     <setting propertyKey="@Properties.Field7Data" title="@Strings.Field7Data">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.None</listEntry>
+            <listEntry value="1">@Strings.ActiveMinutesDay</listEntry>
+            <listEntry value="2">@Strings.ActiveMinutesWeek</listEntry>
+            <listEntry value="3">@Strings.ActiveMinutesGoal</listEntry>
+            <listEntry value="4">@Strings.Calories</listEntry>
+            <listEntry value="5">@Strings.Distance</listEntry>
+            <listEntry value="6">@Strings.FloorsClimbed</listEntry>
+            <listEntry value="7">@Strings.FloorGoal</listEntry>
+            <listEntry value="8">@Strings.FloorsDescended</listEntry>
+            <listEntry value="9">@Strings.DistanceClimbed</listEntry>
+            <listEntry value="10">@Strings.DistanceDescended</listEntry>
+            <listEntry value="11">@Strings.Steps</listEntry>
+            <listEntry value="12">@Strings.StepGoal</listEntry>
+            <listEntry value="13">@Strings.Battery</listEntry>
+            <listEntry value="14">@Strings.HeartRate</listEntry>
+            <listEntry value="15">@Strings.Temperature</listEntry>
+            <listEntry value="16">@Strings.BodyTemperature</listEntry>
+            <listEntry value="17">@Strings.WeatherTemp</listEntry>          
+        </settingConfig>
+    </setting>
+
+</settings>

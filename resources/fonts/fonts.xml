@@ -1,0 +1,13 @@
+<fonts>
+	<font id="TimeSmall" filename="bebas-neue_num_65.fnt" filter="0123456789-/:." antialias="true" />
+	<font id="TimeMedium" filename="bebas-neue_num_70.fnt" filter="0123456789-/:." antialias="true" />
+	<font id="TimeBig" filename="bebas-neue_num_75.fnt" filter="0123456789-/:." antialias="true" />
+	<font id="Data" filename="bebas-neue_num_40.fnt" filter="0123456789-/:." antialias="true" />
+	<font id="Text" filename="bebas-neue_30.fnt" antialias="true" />
+	<font id="HoursStrong" filename="futura122num.fnt" filter="0123456789-/:." antialias="true" />
+	<font id="DataSmall" filename="bebas-neue_num_25.fnt"  antialias="true" />
+	<font id="SmallStrong" filename="futura28mdscandi.fnt"  antialias="true" />
+	<font id="Condensed" filename="futura-condensed18.fnt"  antialias="true" />
+	<font id="Ico" filename="../drawables/icons.fnt" antialias="true" />
+	<font id="WI" filename="weatherIcons_30.fnt" antialias="true" />
+</fonts>

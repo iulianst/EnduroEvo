@@ -1,0 +1,19 @@
+<properties>
+    <property id="GraphData" type ="number">1</property>
+    <property id="BackgroundColor" type="number">0x000000</property>
+    <property id="ForegroundColor" type="number">0xFFFFFF</property>
+    <property id="Marker1Color" type="number">0x00FF00</property>
+    <property id="Marker2Color" type="number">0xFF0000</property>
+    <property id="Marker3Color" type="number">0x00AAFF</property>
+    <property id="TimeFontSize" type="number">0</property>
+    <property id="AlwaysOnSec" type="boolean">false</property>
+    <property id="UseMilitaryFormat" type="boolean">false</property>
+    <property id="Field1Data" type="number">1</property>
+    <property id="Field2Data" type="number">2</property>
+    <property id="Field3Data" type="number">11</property>
+    <property id="Field4Data" type="number">12</property>
+    <property id="Field5Data" type="number">16</property>
+    <property id="Field6Data" type="number">4</property>
+    <property id="Field7Data" type="number">13</property>
+
+</properties>

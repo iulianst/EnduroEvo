@@ -1,0 +1,11 @@
+<layout id="WatchFace">
+ 
+    <drawable class="Background" />
+<!--    <label id="StatusLabel" x="20%" y="center" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
+    <label id="TimeLabel" x="center" y="center" font="Graphics.FONT_SYSTEM_NUMBER_MEDIUM" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="SecondsLabel" x="200" y="center" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
+    <label id="TextLabel" x="center" y="10" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="D1Label" x="45%" y="40" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
+    <label id="D2Label" x="55%" y="40" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
+    -->
+</layout>

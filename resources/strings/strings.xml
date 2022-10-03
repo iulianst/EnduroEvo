@@ -1,0 +1,71 @@
+<strings>
+
+    <string id="AppName">Enduro Evo</string>
+
+    <string id="Field1Data">Field 1 Data</string>
+    <string id="Field2Data">Field 2 Data</string>
+    <string id="Field3Data">Field 3 Data</string>
+    <string id="Field4Data">Field 4 Data</string>
+    <string id="Field5Data">Field 5 Data</string>
+    <string id="Field6Data">Field 6 Data</string>
+    <string id="Field7Data">Field 7 Data</string>
+
+    <string id="None">None</string>
+    <string id="ActiveMinutesDay">Active Minutes for the Day</string>
+    <string id="ActiveMinutesWeek">Active Minutes for the Week</string>
+    <string id="ActiveMinutesGoal">Active Minutes Weekly Goal</string>
+    <string id="Calories">Calories Burned so far for the Day</string>
+    <string id="Distance">Distance since midnight (cm)</string>
+    <string id="FloorsClimbed">Floors Climbed</string>
+    <string id="FloorGoal">Floor Climb Goal</string>
+    <string id="FloorsDescended">Floors Descended</string>
+    <string id="DistanceClimbed">Vertical Distance of Floors Climbed (m)</string>
+    <string id="DistanceDescended">Vertical Distance of Floors Descended (m)</string>
+    <string id="Steps">Step Count Since Midnight</string>
+    <string id="StepGoal">Step Goal for the Day</string>
+    <string id="Battery">Battery Percentage</string>
+    <string id="HeartRate">Heart Rate</string>
+    <string id="Temperature">Temperature (sens)</string>
+    <string id="BodyTemperature">Body Temperature</string>
+    <string id="WeatherTemp">Weather Cond Temp</string>
+ 
+    <string id="GraphDataTitle">Graph Data</string>
+    <string id="GraphBodyTemp">Body Temperature</string>
+    <string id="GraphHeartRate">Heart Rate</string>
+    <string id="GraphTemperature">Temperature</string>
+    <string id="GraphPressure">Pressure</string>
+    <string id="GraphElevation">Elevation</string>
+    <string id="GraphOxygen">Oxygen Saturation</string>
+
+    <string id="BackgroundColorTitle">Background Color</string>
+    <string id="ForegroundColorTitle">Foreground Color</string>
+    <string id="Marker1Color">Narker 1 Color</string>
+    <string id="Marker2Color">Narker 2 Color</string>
+    <string id="Marker3Color">Narker 3 Color</string>
+
+    <string id="MilitaryFormatTitle">Military Format for 24 Hour Time</string>
+
+    <string id="AlwaysOnSec">Always On Seconds</string>
+
+    <string id="TimeFontSize">Time Font Size</string>
+    <string id="TimeFontSmall">Small Size Font</string>
+    <string id="TimeFontMedium">Medium Size Font</string>
+    <string id="TimeFontBig">Big Size Font</string>
+
+
+    <string id="ColorWhite">White</string>
+    <string id="ColorLightGray">Light Gray</string>
+    <string id="ColorDarkGray">Dark Gray</string>
+    <string id="ColorBlack">Black</string>
+    <string id="ColorRed">Red</string>
+    <string id="ColorDarkRed">Dark Red</string>
+    <string id="ColorOrange">Orange</string>
+    <string id="ColorYellow">Yellow</string>
+    <string id="ColorGreen">Green</string>
+    <string id="ColorDarkGreen">Dark Green</string>
+    <string id="ColorBlue">Blue</string>
+    <string id="ColorDarkBlue">Dark Blue</string>
+    <string id="ColorPurple">Purple</string>
+    <string id="ColorPink">Pink</string>
+
+</strings>
