@@ -18,9 +18,10 @@ class EnduroEvoDataField {
         "Vertical Distance of Floors Climbed (m)", "Vertical Distance of Floors Descended (m)",
         "Step Count Since Midnight", "Step Goal for the Day",
         "Battery Percentage",
-        "Heart Rate", "Temperature (sens)", "Body Temperature", "Weather Cond&Temp",
+        "Heart Rate", "Temperature (sens)", "Body Temperature", "Weather Cond&Temp", "Time to Recovery",
+        "Move Bar", "Recovery Time", "Respiration Rate",
     ];
-
+    
     var mShortLabel = [
         "None", "Act Minu",
         "Act Min Week", "Act Min Goal",
@@ -29,7 +30,8 @@ class EnduroEvoDataField {
         "Dist Climb", "Dist Desc",
         "Steps", "Step Goal",
         "Battery %",
-        "Heart Rate", "Temp (sens)", "Body Temp", "Weather Temp",
+        "Heart Rate", "Temp (sens)", "Body Temp", "Weather Temp", 
+        "Move Bar", "Recovery Time", "Respiration Rate",
     ];
 
     var mXShortLabel = [
@@ -41,20 +43,25 @@ class EnduroEvoDataField {
         "Stp", "StpG",
         "Batt",
         "HR", "TmpS", "BTmp","WTmp",
+        "Move", "Recv", "Resp",
     ];
-
     function initialize() {    
     }
 
     function getLabel(index){
         return mLabel[index];
     }
+
     function getShortLabel(index){
         return mShortLabel[index];
     }
 
     function getStringValue(index){
         var val = getValue(index);
+        if(val ==null) 
+        {
+            return "--";
+        }
         switch(val) {
         case instanceof Number:
             return val.format("%02d");
@@ -69,18 +76,20 @@ class EnduroEvoDataField {
         var HR =  Activity.getActivityInfo().currentHeartRate;
         if(HR != null) {return HR;}
         else {return 00;}
-        //return new EnduroEvoSensors().getHR();
+        var sHR = new EnduroEvoSensors().getHR();
+        if(sHR != null) {return sHR;}
+        return 0;
     }
+
     function getTemperature() {        
         var temp = new EnduroEvoSensors().getTemperature();
         if (temp== null) {return 0.0;}
         return temp;
     }
+
     function getBodyTemp() as Lang.Float {
         var HR = getHR(); if (HR== null) {HR=60;}
         var temp =  getTemperature(); if (temp== null) {return 0.0;}
-        
-
         return 0.0100 *HR +0.0837 * temp + 33.1735;
     }
 
@@ -121,11 +130,20 @@ class EnduroEvoDataField {
                 return getTemperature();
             case 16:
                 return getBodyTemp();
+            case 17:
+                return null; //weather condition field, case handled in drawField(); 
+            case 18:
+                return am.moveBarLevel;
+            case 19:
+                return am.timeToRecovery;
+            case 20:
+                return am.respirationRate;
 
             default:
                 return 0;          
         }
     }
+
     function drawField(dc, x, y, dataIndex, justify){
 
          var fontData = WatchUi.loadResource(Rez.Fonts.Data);
@@ -135,11 +153,6 @@ class EnduroEvoDataField {
             if(WC!=null)
             {
                 var fontWI = WatchUi.loadResource(Rez.Fonts.WI);
-                // commented and replaced with the next line that fixes an intermitent error:
-                //Error: Unexpected Type Error
-                //Details: 'Failed invoking <symbol>'
-                //replaced with the next line
-                //var strTemp = WC.temperature.toString(); 
                 var strTemp = WC.temperature!=null? WC.temperature.format("%d"): "--";
                 var wdthTemp = dc.getTextWidthInPixels(strTemp, fontData)+5;
                 var condition = WC.condition !=null? WC.condition: Weather.CONDITION_UNKNOWN;
@@ -151,10 +164,8 @@ class EnduroEvoDataField {
             
             dc.drawText(x, y, fontData, getStringValue(dataIndex), justify);
         }
-
-        
-
     }
+
     function getWIIcon(index){    
         var charNul = -65 + 'A'; 
         return index +  charNul;        

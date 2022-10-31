@@ -5,6 +5,7 @@
     <property id="Marker1Color" type="number">0x00FF00</property>
     <property id="Marker2Color" type="number">0xFF0000</property>
     <property id="Marker3Color" type="number">0x00AAFF</property>
+    <property id="Marker4Color" type="number">0xFFFFFF</property>
     <property id="TimeFontSize" type="number">0</property>
     <property id="AlwaysOnSec" type="boolean">false</property>
     <property id="UseMilitaryFormat" type="boolean">false</property>
