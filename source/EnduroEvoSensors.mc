@@ -253,8 +253,13 @@ class EnduroEvoSensors  {
                 var lastSampleTime = null;
                 var graphBottom = dc.getHeight() - 30;
                 var graphHeight = graphBottom - dc.getHeight()/3*2;
-                var dataOffset = min.toFloat();
-                var dataScale = max.toFloat();
+                var dataOffset = 0.0f;
+                var dataScale = 0.0f;
+                if( min != null and max != null)
+                {
+                    dataOffset = min.toFloat();
+                    dataScale = max.toFloat();
+                }                
                 var gotValidData = false;
 
                 dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
