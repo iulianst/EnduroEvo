@@ -36,8 +36,6 @@ class EnduroEvoView extends WatchUi.WatchFace {
     private var mExHR as Lang.Number;
     private var mDataFieldsIndex = new[8];
     private var mDataField = new EnduroEvoDataField();
-    
-
 
     function initialize() {
         isAwake = true;
@@ -45,11 +43,7 @@ class EnduroEvoView extends WatchUi.WatchFace {
         mExBattery=100.00;
         mActBattCons=0.00;
         mExHR = 40;
-
         partialUpdatesAllowed = ( Toybox.WatchUi.WatchFace has :onPartialUpdate );
-
-        
-
         WatchFace.initialize();
     }
 
@@ -59,36 +53,15 @@ class EnduroEvoView extends WatchUi.WatchFace {
         scr_height = dc.getHeight();
         cx = scr_width/2;
         cy = scr_height/2;
-
-        
-        
         ReadSettings();
-
-        
-
         curClip = null;
-        
         fontData = WatchUi.loadResource(Rez.Fonts.Data);
         fontText = WatchUi.loadResource(Rez.Fonts.Text);
         fontWI = WatchUi.loadResource(Rez.Fonts.WI);
-        //fontTime = Graphics.FONT_SYSTEM_NUMBER_MEDIUM;
-        //fontData = Graphics.FONT_GLANCE_NUMBER;
-
-        
-        //var a = scr_height/3*2-dc.getFontHeight(fontData);
-        //var b = cy -dc.getFontHeight(fontData);
-        //var c = cy; //+dc.getFontHeight(fontData);
 
         getApp().mYDataBL = cy; 
         getApp().mYDataTL = cy -dc.getFontHeight(fontData);
-        //getApp().mYDataBL = scr_height/3*2-dc.getFontHeight(fontData);
-        //getApp().mYDataTL = scr_height/3;
-
-        
-
-        //setLayout(Rez.Layouts.WatchFace(dc));
     }
-
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
@@ -127,14 +100,6 @@ class EnduroEvoView extends WatchUi.WatchFace {
         mDataFieldsIndex[6] = getApp().Properties.getValue("Field7Data") as Numeric;
     }
 
-    // Draw the watch face background
-    // onUpdate uses this method to transfer newly rendered Buffered Bitmaps
-    // to the main display.
-    // onPartialUpdate uses this to blank the second hand from the previous
-    // second before outputing the new one.
-    
-
-    // Update the view
     function onUpdate(dc as Dc) as Void {
         // Get the current time and format it correctly
         //var timeFormat = "$1$:$2$:$3$";
@@ -187,24 +152,10 @@ class EnduroEvoView extends WatchUi.WatchFace {
         
         dc.setColor(mFgColor,mBgColor);
         dc.clear();
-        /* // Draw a test pie
-        dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-        var c = getCoordinates(scr_width/2,220);
-        var poly = [
-            [c[0],c[1]],
-            [c[0],scr_height],
-            [scr_width,scr_height],
-            [scr_width,0],
-            [scr_width/2,0],
-            [cx,cy],
-        ];
-        dc.fillPolygon(poly);
-        */
         dc.setPenWidth(2);
         dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
         dc.drawLine(x1, scr_height/3 ,x2, scr_height/3);
         dc.drawLine(x1, scr_height/3*2 ,x2, scr_height/3*2);
-
         dc.setColor(mFgColor,Graphics.COLOR_TRANSPARENT);
     
         if (!System.getDeviceSettings().is24Hour) {
@@ -222,10 +173,9 @@ class EnduroEvoView extends WatchUi.WatchFace {
 
         dc.setColor(mFgColor,Graphics.COLOR_TRANSPARENT	);
         timeBox[0] = cx - dc.getTextDimensions(timeString, fontTime)[0]/2;
-        timeBox[1] = scr_height/3-5;//cy - dc.getTextDimensions(timeString, fontTime)[1]/2 - 15;
+        timeBox[1] = scr_height/3-5;
         timeBox[2] = cx + dc.getTextDimensions(timeString, fontTime)[0]/2;
         timeBox[3] = cy + dc.getTextDimensions(timeString, fontTime)[1]/2 - 15 ;
-       // dc.drawRectangle(timeBox[0], timeBox[1], timeBox[2]-timeBox[0],timeBox[3]-timeBox[1] );
 
         dc.drawText(cx,scr_height/3*2-dc.getFontHeight(fontText), fontText, dateString, Graphics.TEXT_JUSTIFY_CENTER);
 
@@ -251,13 +201,8 @@ class EnduroEvoView extends WatchUi.WatchFace {
             }
         }
 
-           
-
         var temp = sens.getTemperature();
-
-        //sens.draw(dc,0);
         sens.draw(dc,mGDataIndex);
-      
 
         drawMark(dc,0,10, Graphics.COLOR_WHITE);
         drawMark(dc,30,5, Graphics.COLOR_WHITE);
@@ -266,19 +211,14 @@ class EnduroEvoView extends WatchUi.WatchFace {
         drawMark(dc,300,5, Graphics.COLOR_WHITE);
         var angle_ring1 = (System.getSystemStats().battery *360/100);
         var angle_ring2 = (actpercent*360);   
-        //var angle_ring3 = 60 * 360 / 120;
         var angle_ring3 = mDataField.getValue(14) * 360 / 120;
 
         drawHashIndicator(dc,dinfo.steps *360/dinfo.stepGoal,scr_width/2-10,10,mMarker1Color,0);
         drawHashIndicator(dc,angle_ring1,scr_width/2-1,10,mMarker2Color,3);
         drawHashIndicator(dc,angle_ring2,scr_width/2-1,10,mMarker3Color,2);
         drawHashIndicator(dc,angle_ring3,scr_width/2-1,10,mMarker4Color,1);
-        
         dc.setColor(mFgColor,Graphics.COLOR_TRANSPARENT	);
-
         dc.drawText(mLatOffset, getApp().mYDataBL , fontData, hr.toString(), Graphics.TEXT_JUSTIFY_RIGHT);
-        
-
         if( partialUpdatesAllowed && mAlwaysOnSec) {
             // If this device supports partial updates and they are currently
             // allowed run the onPartialUpdate method to draw the seconds
@@ -300,7 +240,7 @@ class EnduroEvoView extends WatchUi.WatchFace {
         return index +  charNul;        
     }
 
-     function onPartialUpdate( dc ) {
+    function onPartialUpdate( dc ) {
         if(mAlwaysOnSec) {            
             var clockTime = System.getClockTime();
             var value = clockTime.sec.format("%02d");
@@ -313,44 +253,41 @@ class EnduroEvoView extends WatchUi.WatchFace {
             dc.clear();
             dc.drawText(ax, ay, fontData, value, Graphics.TEXT_JUSTIFY_LEFT);              
             var HR =  Activity.getActivityInfo().currentHeartRate;
-            if (HR==null) {HR=0;}
-           // if (HR != mExHR){
-                mExHR=HR;
-                value=HR.toString();
-                ax= mLatOffset;
-                ay = getApp().mYDataBL  ;
-                width = dc.getTextWidthInPixels(value, fontData);
-                height = dc.getFontHeight(fontData);
-                //dc.clearClip();
-                dc.setClip(ax-width, ay, width, height);
-                dc.setColor(mFgColor,mBgColor);
-                dc.clear();
-                dc.drawText(ax, ay, fontData, value, Graphics.TEXT_JUSTIFY_RIGHT);
-           // }
+            if (HR==null) {
+                HR=0;
+                }
+            value=HR.toString();
+            ax= mLatOffset;
+            ay = getApp().mYDataBL  ;
+            width = dc.getTextWidthInPixels(value, fontData);
+            height = dc.getFontHeight(fontData);
+            dc.setClip(ax-width, ay, width, height);
+            dc.setColor(mFgColor,mBgColor);
+            dc.clear();
+            dc.drawText(ax, ay, fontData, value, Graphics.TEXT_JUSTIFY_RIGHT);
         }
     }   
 
-
-// Compute a bounding box from the passed in points
-function getBoundingBox( points ) {
-    var min = [9999,9999];
-    var max = [0,0];
-     for (var i = 0; i < points.size(); ++i) {
-            if(points[i][0] < min[0]) {
-                min[0] = points[i][0];
-            }
-            if(points[i][1] < min[1]) {
-                min[1] = points[i][1];
-            }
-            if(points[i][0] > max[0]) {
-                max[0] = points[i][0];
-            }
-            if(points[i][1] > max[1]) {
-                max[1] = points[i][1];
-            }
+    // Compute a bounding box from the passed in points
+    function getBoundingBox( points ) {
+        var min = [9999,9999];
+        var max = [0,0];
+        for (var i = 0; i < points.size(); ++i) {
+                if(points[i][0] < min[0]) {
+                    min[0] = points[i][0];
+                }
+                if(points[i][1] < min[1]) {
+                    min[1] = points[i][1];
+                }
+                if(points[i][0] > max[0]) {
+                    max[0] = points[i][0];
+                }
+                if(points[i][1] > max[1]) {
+                    max[1] = points[i][1];
+                }
+        }
+        return [min, max];
     }
-    return [min, max];
-}
 
     function drawHashIndicator(dc as Dc or Null, angle, rad, len, color, shape){
         // If gets dc == null will return coordinates 
@@ -361,8 +298,8 @@ function getBoundingBox( points ) {
             cos[i] = Math.cos(Math.toRadians(angle-90+(i*3)-6));  
             sin[i] = Math.sin(Math.toRadians(angle-90+(i*3)-6));
         }
+
         // triangle
-         
         var x = new [7];
         var y = new [7];
         switch (shape){
@@ -485,11 +422,9 @@ function getBoundingBox( points ) {
         isAwake = false;
         WatchUi.requestUpdate();
     }
-
 }
 
 class EnduroEvoDelegate extends WatchUi.WatchFaceDelegate {
-
     function initialize() {
         WatchFaceDelegate.initialize();
     }

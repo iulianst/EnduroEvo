@@ -79,8 +79,6 @@ class EnduroEvoSettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
 			Menu.addItem( new WatchUi.MenuItem("Field 7 Data", selectedLabel , 12,null));
 			Menu.pushView(Menu, new EnduroEvoSettingsL2Delegate(), WatchUi.SLIDE_UP );
 		}
-
-				
 	}
   	
   	function onBack() {
@@ -93,9 +91,7 @@ class EnduroEvoSettingsL2Delegate extends WatchUi.Menu2InputDelegate {
     function initialize() {
         Menu2InputDelegate.initialize();
     }
-
   	function onSelect(item) {
-
 			if(item instanceof IconMenuItem) {
 				item.setSubLabel(item.getIcon().nextState());
 				if(item.getId()==1) {getApp().Properties.setValue("BackgroundColor", item.getIcon().getColor());}
@@ -115,18 +111,9 @@ class EnduroEvoSettingsL2Delegate extends WatchUi.Menu2InputDelegate {
 
 			item.setSubLabel(dataLabels[selectedIbdex]);
 			getApp().Properties.setValue(str, selectedIbdex);
-				
-			
-
 		}
 		getApp().onSettingsChanged();
         WatchUi.requestUpdate();
-  		/*var id=item.getId();
-		var sens =  new EnduroEvoSensors();
-        var selectedLabel = sens.mSensorLabel[id];
-		var parent = getApp().settingsMenu.getItem(0);
-		parent.setSubLabel(selectedLabel);
-		getApp().Properties.setValue("GraphData", id);*/
 	}
   	
   	function onBack() {
@@ -136,14 +123,10 @@ class EnduroEvoSettingsL2Delegate extends WatchUi.Menu2InputDelegate {
 }
 
 class CustomIcon extends WatchUi.Drawable {
-    // This constant data stores the color state list.
-    //const mColors = [Graphics.COLOR_RED, Graphics.COLOR_ORANGE, Graphics.COLOR_YELLOW, Graphics.COLOR_GREEN, Graphics.COLOR_BLUE, Graphics.COLOR_PURPLE];
     const mColorStrings = ["White","Light Gray","Dark Gray","Black","Red","Dark Red","Orange","Yellow","Green","Dark Green","Blue","Dark Blue","Purple","Pink"];
-
     const mColors = [Graphics.COLOR_WHITE,Graphics.COLOR_LT_GRAY,Graphics.COLOR_DK_GRAY,Graphics.COLOR_BLACK,Graphics.COLOR_RED,
         Graphics.COLOR_DK_RED,Graphics.COLOR_ORANGE,Graphics.COLOR_YELLOW,Graphics.COLOR_GREEN,Graphics.COLOR_DK_GREEN,
         Graphics.COLOR_BLUE,Graphics.COLOR_DK_BLUE,Graphics.COLOR_PURPLE,Graphics.COLOR_PINK];
-
     var mIndex;
 
     function initialize( color as Lang.Number or Null) {
@@ -152,14 +135,12 @@ class CustomIcon extends WatchUi.Drawable {
         else { mIndex = 0;}
     }
 
-
     // Advance to the next color state for the drawable
     function nextState() {
         mIndex++;
         if(mIndex >= mColors.size()) {
             mIndex = 0;
         }
-
         return mColorStrings[mIndex];
     }
 

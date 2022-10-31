@@ -4,7 +4,6 @@ using Toybox.Graphics;
 
 class EnduroEvoSettingsMenu extends WatchUi.Menu2 {
     var mFontSizeLabel = ["Small","Medium", "Big"];
-
     function initialize() {
         var usemil=getApp().Properties.getValue("UseMilitaryFormat");
         var AlwaysOnSec=getApp().Properties.getValue("AlwaysOnSec");
@@ -21,6 +20,7 @@ class EnduroEvoSettingsMenu extends WatchUi.Menu2 {
         Menu2.addItem(new WatchUi.ToggleMenuItem("Military Format", "for 24 Hour Time","UseMil",usemil, null));
     }    
 }
+
 
 class DrawableMenuTitle extends WatchUi.Drawable {
     var mIsTitleSelected = false;

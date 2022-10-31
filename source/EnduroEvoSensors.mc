@@ -6,13 +6,11 @@ using Toybox.Time.Gregorian;
 using Toybox.Lang;
 
 class EnduroEvoSensors  {
-
     
     private var duration = new Time.Duration(3600);
     private var fontData, fontDataSmall;
     private var fontDataHeight, fontDataSmallHeight;
     private var mFgColor;
- 
 
     hidden var mSensorSymbols = [
         :getHeartRateHistory, //0
@@ -34,6 +32,7 @@ class EnduroEvoSensors  {
         "Elevation",
         "Body Temperature",
     ];
+
     var mSensorLabelShort = [
         "Heart Rate",        
         "Temperature",
@@ -99,24 +98,19 @@ class EnduroEvoSensors  {
     }
 
     function getHR(){
-       
         if ( Toybox has :SensorHistory ) {
-
             var sensorIter = getIterator(0);
- 
             if( sensorIter != null ) {
-                
                 var ret= sensorIter.next();
                 while(null == ret)
                 {
                     ret = sensorIter.next();
                 }
                 return ret.data;
-
             }
         }
-
     }
+
     function draw(dc,index) as Void {
         if (index==7){
             drawBodyTemp(dc);
@@ -130,7 +124,6 @@ class EnduroEvoSensors  {
     }
 
     function drawBodyTemp(dc) as Void{
-
         var font = Graphics.FONT_GLANCE_NUMBER;
         var fontHeight = dc.getFontHeight(font);
         var font_small = Graphics.FONT_SMALL;
@@ -164,11 +157,9 @@ class EnduroEvoSensors  {
                 dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
                 //dc.drawRectangle(50, graphBottom-graphHeight, dc.getWidth()-100, graphBottom);
                 while( null != sampleT && null != sampleHR) {
-
                     if( null == firstSampleTime ) {
                         firstSampleTime = previousT.when;
                     }
-
                     if( sampleT.data != null && previousT.data != null && sampleHR.data != null && previousHR.data != null ) {
                         lastSampleTime = sampleT.when;
                         var prevTemp = getBodyTemp( previousT.data, previousHR.data);
@@ -181,7 +172,6 @@ class EnduroEvoSensors  {
                         dc.drawLine(x, y1, x+1, y2);
                         gotValidData = true;
                     }
-
                     --x;
                     if(x<0) {x=0;}
                     previousT = sampleT;
@@ -190,10 +180,7 @@ class EnduroEvoSensors  {
                     sampleHR = HRIter.next();
                 }
                 dc.setColor(mFgColor, Graphics.COLOR_TRANSPARENT);
-
                 if( gotValidData ) {
-                   
-
                     // draw the min/max hr values
                     if( max == null ) {
                         max = "";
@@ -205,15 +192,11 @@ class EnduroEvoSensors  {
                     } else {
                         min = min.format("%02.1f");
                     }
-                    
-
                     dc.drawText(dc.getWidth() / 2 -10, dc.getHeight()*2/3  /*- fontDataHeight*/, fontData, min, Graphics.TEXT_JUSTIFY_RIGHT);
                     dc.drawText(dc.getWidth() / 2 +10, dc.getHeight()*2/3  /*- fontDataHeight*/, fontData, max, Graphics.TEXT_JUSTIFY_LEFT);
                     // draw the data label
                     dc.drawText(dc.getWidth()/2, dc.getHeight() - font_xtinyHeight, font_xtiny, mSensorLabelShort[0], Graphics.TEXT_JUSTIFY_CENTER);
-
-                }
-                else {
+                } else {
                     var message = mSensorLabel[0] + "\nNo data available.";                    
                     dc.drawText(dc.getWidth()/2, dc.getHeight()/3*2+font_smallHeight , font_small, message, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
                 }
@@ -222,18 +205,13 @@ class EnduroEvoSensors  {
                 var message = mSensorLabel[0] + "\nnot available";
                 dc.drawText(dc.getWidth()/2, dc.getHeight()/3*2+font_smallHeight , font_small, message, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
             }
-
         } else {
             var message = "Sensor History\nNot Supported";
             dc.drawText(dc.getWidth()/2, dc.getHeight()/3*2+font_smallHeight , font_small, message, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
         }
-
-        
     }
 
-
     function drawSensor(dc, index) as Void {      
-
         var font = Graphics.FONT_GLANCE_NUMBER;
         var fontHeight = dc.getFontHeight(font);
         var font_small = Graphics.FONT_SMALL;
@@ -242,8 +220,6 @@ class EnduroEvoSensors  {
         var font_xtinyHeight = dc.getFontHeight(font_xtiny);
         fontDataSmallHeight =  dc.getFontHeight(fontDataSmall);
         fontDataHeight =  dc.getFontHeight(fontData);
-
-        
         if ( Toybox has :SensorHistory ) {
             var sensorIter = getIterator(index);
             if( sensorIter != null ) {
@@ -264,14 +240,11 @@ class EnduroEvoSensors  {
                     dataScale = max.toFloat();
                 }                
                 var gotValidData = false;
-
                 dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
                 while( null != sample ) {
-
                     if( null == firstSampleTime ) {
                         firstSampleTime = previous.when;
                     }
-
                     if( sample.data != null && previous.data != null ) {
                         lastSampleTime = sample.when;
                         var y1 = graphBottom -( previous.data -dataOffset )/ ((dataScale-dataOffset)/graphHeight);
@@ -280,17 +253,13 @@ class EnduroEvoSensors  {
                         dc.drawLine(x, y1, x+1, y2);
                         gotValidData = true;
                     }
-
                     --x;
                     if(x<0) {x=0;}
                     previous = sample;
                     sample = sensorIter.next();
                 }
                 dc.setColor(mFgColor, Graphics.COLOR_TRANSPARENT);
-
                 if( gotValidData ) {
-                   
-
                     // draw the min/max hr values
                     if( max == null ) {
                         max = "";
@@ -304,7 +273,6 @@ class EnduroEvoSensors  {
                         if (index==2) {min =min.format("%02.0f");}
                         else {min = min.format( "%d" );}
                     }
-                    
                     if (index==3) {
                         dc.drawText(dc.getWidth() / 2 -10, dc.getHeight()*2/3  /*- fontDataSmallHeight*/, fontDataSmall, min, Graphics.TEXT_JUSTIFY_RIGHT);
                         dc.drawText(dc.getWidth() / 2 +10, dc.getHeight()*2/3 /*- fontDataSmallHeight*/, fontDataSmall, max, Graphics.TEXT_JUSTIFY_LEFT);
@@ -324,13 +292,9 @@ class EnduroEvoSensors  {
                 var message = mSensorLabel[index] + "\nSensor not available";
                 dc.drawText(dc.getWidth()/2, dc.getHeight()/3*2+font_smallHeight , font_small, message, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
             }
-
         } else {
             var message = "Sensor History\nNot Supported";
             dc.drawText(dc.getWidth()/2, dc.getHeight()/3*2+font_smallHeight , font_small, message, (Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER));
         }
-
-        
     }
-
 }

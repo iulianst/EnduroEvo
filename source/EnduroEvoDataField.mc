@@ -21,7 +21,7 @@ class EnduroEvoDataField {
         "Heart Rate", "Temperature (sens)", "Body Temperature", "Weather Cond&Temp", "Time to Recovery",
         "Move Bar", "Recovery Time", "Respiration Rate",
     ];
-
+    
     var mShortLabel = [
         "None", "Act Minu",
         "Act Min Week", "Act Min Goal",
@@ -45,13 +45,13 @@ class EnduroEvoDataField {
         "HR", "TmpS", "BTmp","WTmp",
         "Move", "Recv", "Resp",
     ];
-
     function initialize() {    
     }
 
     function getLabel(index){
         return mLabel[index];
     }
+
     function getShortLabel(index){
         return mShortLabel[index];
     }
@@ -80,11 +80,13 @@ class EnduroEvoDataField {
         if(sHR != null) {return sHR;}
         return 0;
     }
+
     function getTemperature() {        
         var temp = new EnduroEvoSensors().getTemperature();
         if (temp== null) {return 0.0;}
         return temp;
     }
+
     function getBodyTemp() as Lang.Float {
         var HR = getHR(); if (HR== null) {HR=60;}
         var temp =  getTemperature(); if (temp== null) {return 0.0;}
@@ -141,6 +143,7 @@ class EnduroEvoDataField {
                 return 0;          
         }
     }
+
     function drawField(dc, x, y, dataIndex, justify){
 
          var fontData = WatchUi.loadResource(Rez.Fonts.Data);
@@ -150,11 +153,6 @@ class EnduroEvoDataField {
             if(WC!=null)
             {
                 var fontWI = WatchUi.loadResource(Rez.Fonts.WI);
-                // commented and replaced with the next line that fixes an intermitent error:
-                //Error: Unexpected Type Error
-                //Details: 'Failed invoking <symbol>'
-                //replaced with the next line
-                //var strTemp = WC.temperature.toString(); 
                 var strTemp = WC.temperature!=null? WC.temperature.format("%d"): "--";
                 var wdthTemp = dc.getTextWidthInPixels(strTemp, fontData)+5;
                 var condition = WC.condition !=null? WC.condition: Weather.CONDITION_UNKNOWN;
@@ -166,10 +164,8 @@ class EnduroEvoDataField {
             
             dc.drawText(x, y, fontData, getStringValue(dataIndex), justify);
         }
-
-        
-
     }
+
     function getWIIcon(index){    
         var charNul = -65 + 'A'; 
         return index +  charNul;        

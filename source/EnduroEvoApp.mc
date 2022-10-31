@@ -20,15 +20,15 @@ class EnduroEvoApp extends Application.AppBase {
         return [ settingsMenu ,new EnduroEvoSettingsMenuDelegate()];
     } 
 
-    // onStart() is called on application start up
+    //application start up
     function onStart(state as Dictionary?) as Void {
     }
 
-    // onStop() is called when your application is exiting
+    //application is exiting
     function onStop(state as Dictionary?) as Void {
     }
 
-    // Return the initial view of your application here
+    //Returns initial view of your application
     function getInitialView()  {
         mMainView = new EnduroEvoView();
         if( Toybox.WatchUi has :WatchFaceDelegate ) {
@@ -46,7 +46,7 @@ class EnduroEvoApp extends Application.AppBase {
     }
 
 }
-
+// Returins the app object
 function getApp() as EnduroEvoApp {
     return Application.getApp() as EnduroEvoApp;
 }
