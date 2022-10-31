@@ -15,29 +15,34 @@ class EnduroEvoSensors  {
  
 
     hidden var mSensorSymbols = [
-        :getTemperatureHistory,
-        :getHeartRateHistory,
-        :getTemperatureHistory,
-        :getPressureHistory,
-        :getElevationHistory,
-       // :getOxygenSaturationHistory,
+        :getHeartRateHistory, //0
+        :getTemperatureHistory,//1
+        :getBodyBatteryHistory,//2
+        :getOxygenSaturationHistory,//3
+        :getStressHistory,//4
+        :getPressureHistory,//5
+        :getElevationHistory,//6
     ];
 
     var mSensorLabel = [
-        "Body Temperature",
-        "Heart Rate",
+        "Heart Rate",        
         "Temperature",
+        "Body Battery",
+        "Oxygen Saturation",
+        "Stress",
         "Pressure",
-        "Elevation",        
-        //"Oxygen Saturation",
+        "Elevation",
+        "Body Temperature",
     ];
     var mSensorLabelShort = [
-        "Body Temp",
-        "Heart Rate",
+        "Heart Rate",        
         "Temperature",
+        "Body Battery",
+        "Pulse Ox",
+        "Stress",
         "Pressure",
-        "Elevation",        
-       // "Pulse Ox",
+        "Elevation",
+        "Body Temp",
     ];
 
     hidden var mSensorMin = [
@@ -97,7 +102,7 @@ class EnduroEvoSensors  {
        
         if ( Toybox has :SensorHistory ) {
 
-            var sensorIter = getIterator(1);
+            var sensorIter = getIterator(0);
  
             if( sensorIter != null ) {
                 
@@ -113,12 +118,11 @@ class EnduroEvoSensors  {
 
     }
     function draw(dc,index) as Void {
-        if (index==0){
+        if (index==7){
             drawBodyTemp(dc);
         }else {
             drawSensor(dc,index);
         }
-        
     }
 
     function getBodyTemp(Temp,HR) as Lang.Float {
@@ -135,11 +139,10 @@ class EnduroEvoSensors  {
         var font_xtinyHeight = dc.getFontHeight(font_xtiny);
         fontDataSmallHeight =  dc.getFontHeight(fontDataSmall);
         fontDataHeight =  dc.getFontHeight(fontData);
-
         
         if ( Toybox has :SensorHistory ) {
-            var HRIter = getIterator(1);
-            var TempIter = getIterator(2);
+            var HRIter = getIterator(0);
+            var TempIter = getIterator(1);
             if( HRIter != null && TempIter != null ) {
                 var previousT = TempIter.next();
                 var sampleT = TempIter.next();

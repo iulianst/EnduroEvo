@@ -26,7 +26,7 @@ class EnduroEvoView extends WatchUi.WatchFace {
     private var sens = new EnduroEvoSensors();
     private var mBgColor; var mFgColor;
     private var mGDataIndex; 
-    private var mMarker1Color;var mMarker2Color;var mMarker3Color;
+    private var mMarker1Color;var mMarker2Color;var mMarker3Color; var mMarker4Color;
     private var mUseMil, mAlwaysOnSec, mTimeFontSize;
     private var curClip;
     private var mLatOffset = 60;
@@ -103,6 +103,7 @@ class EnduroEvoView extends WatchUi.WatchFace {
         mMarker1Color = getApp().Properties.getValue("Marker1Color");
         mMarker2Color = getApp().Properties.getValue("Marker2Color");
         mMarker3Color = getApp().Properties.getValue("Marker3Color");
+        mMarker4Color = getApp().Properties.getValue("Marker4Color");
         mUseMil = getApp().Properties.getValue("UseMilitaryFormat");
         mAlwaysOnSec = getApp().Properties.getValue("AlwaysOnSec");
         mTimeFontSize = getApp().Properties.getValue("TimeFontSize") as Numeric;
@@ -271,7 +272,7 @@ class EnduroEvoView extends WatchUi.WatchFace {
         drawHashIndicator(dc,dinfo.steps *360/dinfo.stepGoal,scr_width/2-10,10,mMarker1Color,0);
         drawHashIndicator(dc,angle_ring1,scr_width/2-1,10,mMarker2Color,3);
         drawHashIndicator(dc,angle_ring2,scr_width/2-1,10,mMarker3Color,2);
-        drawHashIndicator(dc,angle_ring3,scr_width/2-1,10,Graphics.COLOR_WHITE,1);
+        drawHashIndicator(dc,angle_ring3,scr_width/2-1,10,mMarker4Color,1);
         
         dc.setColor(mFgColor,Graphics.COLOR_TRANSPARENT	);
 

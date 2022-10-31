@@ -28,20 +28,27 @@
     <string id="Temperature">Temperature (sens)</string>
     <string id="BodyTemperature">Body Temperature</string>
     <string id="WeatherTemp">Weather Cond Temp</string>
+    <string id="MoveBar">Move Bar Level</string>
+    <string id="RecoveryTime">Time To Recovery</string>
+    <string id="Respiration">Respiration Rate</string>
  
     <string id="GraphDataTitle">Graph Data</string>
-    <string id="GraphBodyTemp">Body Temperature</string>
+    
     <string id="GraphHeartRate">Heart Rate</string>
     <string id="GraphTemperature">Temperature</string>
-    <string id="GraphPressure">Pressure</string>
-    <string id="GraphElevation">Elevation</string>
+    <string id="GraphBodyBattery">Body Battery</string>
     <string id="GraphOxygen">Oxygen Saturation</string>
+    <string id="GraphStress">Stress</string>
+    <string id="GraphPressure">Pressure</string>
+    <string id="GraphElevation">Elevation</string>    
+    <string id="GraphBodyTemp">Body Temperature</string>
 
     <string id="BackgroundColorTitle">Background Color</string>
     <string id="ForegroundColorTitle">Foreground Color</string>
     <string id="Marker1Color">Narker 1 Color</string>
     <string id="Marker2Color">Narker 2 Color</string>
     <string id="Marker3Color">Narker 3 Color</string>
+    <string id="Marker4Color">Narker 4 Color</string>
 
     <string id="MilitaryFormatTitle">Military Format for 24 Hour Time</string>
 

@@ -2,12 +2,15 @@
 
     <setting propertyKey="@Properties.GraphData" title="@Strings.GraphDataTitle">
         <settingConfig type="list">
-            <listEntry value="0">@Strings.GraphBodyTemp</listEntry>
-            <listEntry value="1">@Strings.GraphHeartRate</listEntry>
-            <listEntry value="2">@Strings.GraphTemperature</listEntry>
-            <listEntry value="3">@Strings.GraphPressure</listEntry>
-            <listEntry value="4">@Strings.GraphElevation</listEntry>
-           <!-- <listEntry value="4">@Strings.GraphOxygen</listEntry>-->
+           
+            <listEntry value="0">@Strings.GraphHeartRate</listEntry>
+            <listEntry value="1">@Strings.GraphTemperature</listEntry>
+            <listEntry value="2">@Strings.GraphBodyBattery</listEntry>
+            <listEntry value="3">@Strings.GraphOxygen</listEntry>
+            <listEntry value="4">@Strings.GraphStress</listEntry>
+            <listEntry value="5">@Strings.GraphPressure</listEntry>
+            <listEntry value="6">@Strings.GraphElevation</listEntry>
+            <listEntry value="7">@Strings.GraphBodyTemp</listEntry>
         </settingConfig>
     </setting>
 
@@ -103,6 +106,24 @@
             <listEntry value="0xFF00FF">@Strings.ColorPink</listEntry>
         </settingConfig>
     </setting>
+    <setting propertyKey="@Properties.Marker4Color" title="@Strings.Marker4Color">
+        <settingConfig type="list">
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
+            <listEntry value="0xAA0000">@Strings.ColorDarkRed</listEntry>
+            <listEntry value="0xFF5500">@Strings.ColorOrange</listEntry>
+            <listEntry value="0xFFAA00">@Strings.ColorYellow</listEntry>
+            <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>
+            <listEntry value="0x00AA00">@Strings.ColorDarkGreen</listEntry>
+            <listEntry value="0x00AAFF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0x0000FF">@Strings.ColorDarkBlue</listEntry>
+            <listEntry value="0xAA00FF">@Strings.ColorPurple</listEntry>
+            <listEntry value="0xFF00FF">@Strings.ColorPink</listEntry>
+        </settingConfig>
+    </setting>
 
     <setting propertyKey="@Properties.TimeFontSize" title="@Strings.TimeFontSize">
         <settingConfig type="list">
@@ -139,7 +160,10 @@
             <listEntry value="14">@Strings.HeartRate</listEntry>
             <listEntry value="15">@Strings.Temperature</listEntry>
             <listEntry value="16">@Strings.BodyTemperature</listEntry>
-            <listEntry value="17">@Strings.WeatherTemp</listEntry>           
+            <listEntry value="17">@Strings.WeatherTemp</listEntry>
+            <listEntry value="18">@Strings.MoveBar</listEntry>
+            <listEntry value="19">@Strings.RecoveryTime</listEntry>
+            <listEntry value="20">@Strings.Respiration</listEntry>
         </settingConfig>
     </setting>
     <setting propertyKey="@Properties.Field2Data" title="@Strings.Field2Data">

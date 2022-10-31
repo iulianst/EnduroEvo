@@ -18,7 +18,8 @@ class EnduroEvoSettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
 			var sens =  new EnduroEvoSensors();
         	//var selectedLabel = sens.mSensorLabel[id];
 			mSensIndex++; 
-			if(mSensIndex > 4) {mSensIndex=0;}
+			if( mSensIndex > sens.mSensorLabel.size()-1 ) {mSensIndex = 0;}
+			//if(mSensIndex > 7) {mSensIndex=0;}
 			item.setSubLabel(sens.mSensorLabel[mSensIndex]);
 			getApp().Properties.setValue("GraphData", mSensIndex);
 			getApp().onSettingsChanged();
@@ -32,12 +33,14 @@ class EnduroEvoSettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
             var drawable3 = new CustomIcon(getApp().Properties.getValue("Marker1Color"));
 			var drawable4 = new CustomIcon(getApp().Properties.getValue("Marker2Color"));
 			var drawable5 = new CustomIcon(getApp().Properties.getValue("Marker3Color"));
+			var drawable6 = new CustomIcon(getApp().Properties.getValue("Marker4Color"));
 
             iconMenu.addItem(new WatchUi.IconMenuItem("Background", drawable1.getString(), 1, drawable1, {:alignment=>WatchUi.MenuItem.MENU_ITEM_LABEL_ALIGN_LEFT}));
 			iconMenu.addItem(new WatchUi.IconMenuItem("Foreground", drawable2.getString(), 2, drawable2, {:alignment=>WatchUi.MenuItem.MENU_ITEM_LABEL_ALIGN_LEFT}));
             iconMenu.addItem(new WatchUi.IconMenuItem("Marker 1", drawable3.getString(), 3, drawable3, {:alignment=>WatchUi.MenuItem.MENU_ITEM_LABEL_ALIGN_LEFT}));
             iconMenu.addItem(new WatchUi.IconMenuItem("Marker 2", drawable4.getString(), 4, drawable4, {:alignment=>WatchUi.MenuItem.MENU_ITEM_LABEL_ALIGN_LEFT}));
 			iconMenu.addItem(new WatchUi.IconMenuItem("Marker 3", drawable5.getString(), 5, drawable5, {:alignment=>WatchUi.MenuItem.MENU_ITEM_LABEL_ALIGN_LEFT}));
+			iconMenu.addItem(new WatchUi.IconMenuItem("Marker 4", drawable6.getString(), 6, drawable6, {:alignment=>WatchUi.MenuItem.MENU_ITEM_LABEL_ALIGN_LEFT}));
             WatchUi.pushView(iconMenu, new EnduroEvoSettingsL2Delegate(), WatchUi.SLIDE_UP );
 		} else if(item.getId().equals("TimeFontSize")) {
 			mFontIndex++; 
@@ -100,6 +103,7 @@ class EnduroEvoSettingsL2Delegate extends WatchUi.Menu2InputDelegate {
 				if(item.getId()==3) {getApp().Properties.setValue("Marker1Color", item.getIcon().getColor());}
 				if(item.getId()==4) {getApp().Properties.setValue("Marker2Color", item.getIcon().getColor());}
 				if(item.getId()==5) {getApp().Properties.setValue("Marker3Color", item.getIcon().getColor());}
+				if(item.getId()==6) {getApp().Properties.setValue("Marker4Color", item.getIcon().getColor());}
 
 			}
 		else if(item instanceof MenuItem) {

@@ -18,7 +18,8 @@ class EnduroEvoDataField {
         "Vertical Distance of Floors Climbed (m)", "Vertical Distance of Floors Descended (m)",
         "Step Count Since Midnight", "Step Goal for the Day",
         "Battery Percentage",
-        "Heart Rate", "Temperature (sens)", "Body Temperature", "Weather Cond&Temp",
+        "Heart Rate", "Temperature (sens)", "Body Temperature", "Weather Cond&Temp", "Time to Recovery",
+        "Move Bar", "Recovery Time", "Respiration Rate",
     ];
 
     var mShortLabel = [
@@ -29,7 +30,8 @@ class EnduroEvoDataField {
         "Dist Climb", "Dist Desc",
         "Steps", "Step Goal",
         "Battery %",
-        "Heart Rate", "Temp (sens)", "Body Temp", "Weather Temp",
+        "Heart Rate", "Temp (sens)", "Body Temp", "Weather Temp", 
+        "Move Bar", "Recovery Time", "Respiration Rate",
     ];
 
     var mXShortLabel = [
@@ -41,6 +43,7 @@ class EnduroEvoDataField {
         "Stp", "StpG",
         "Batt",
         "HR", "TmpS", "BTmp","WTmp",
+        "Move", "Recv", "Resp",
     ];
 
     function initialize() {    
@@ -55,6 +58,10 @@ class EnduroEvoDataField {
 
     function getStringValue(index){
         var val = getValue(index);
+        if(val ==null) 
+        {
+            return "--";
+        }
         switch(val) {
         case instanceof Number:
             return val.format("%02d");
@@ -121,6 +128,14 @@ class EnduroEvoDataField {
                 return getTemperature();
             case 16:
                 return getBodyTemp();
+            case 17:
+                return null; //weather condition field, case handled in drawField(); 
+            case 18:
+                return am.moveBarLevel;
+            case 19:
+                return am.timeToRecovery;
+            case 20:
+                return am.respirationRate;
 
             default:
                 return 0;          
